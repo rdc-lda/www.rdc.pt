@@ -32,8 +32,8 @@ jobs:
           # Must be an absolute path, or relative path from working_directory
           root: public
           # Must be relative path from root
-          paths:
-            - *
+          # paths:
+          #   - *
   
   # Publish the generated HTML to the RDC Website
   publish:

@@ -17,7 +17,7 @@ crimen habet Priamum nec.
 
 Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis.
 Ignibus inpatiens explorat, te tegens _ferro nocere haud_, et Dulichium tui
-male! Quo sed [fuit flexit et](#vexant-achivi) hic die solido, gloria?
+male! Quo sed fuit flexit et hic die solido, gloria?
 
 1. Cum det dixit Parcarum qui spemque est
 2. Exit ex huic

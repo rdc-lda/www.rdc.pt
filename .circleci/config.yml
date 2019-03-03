@@ -44,7 +44,7 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/hugo/public
+          at: ~/hugo
 
       - run: |
           if [[ -f public/index.html ]]; then

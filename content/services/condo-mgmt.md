@@ -9,7 +9,7 @@ heroSubHeading: 'We can help value your business and prepare it for sale.'
 heroBackground: 'https://source.unsplash.com/K0UlnK175Fc/1600x400'
 ---
 
-Lorem markdownum, dictis umbrosum dextrum, Lelegeia quamquam distantes pares
+Markdownum, dictis umbrosum dextrum, Lelegeia quamquam distantes pares
 ignisque quaerit dederat gemino Aethiopesque caelo
 ulciscitur est. Morte lugebere conatur Pallada
 quaerentes tulit, **ignis vagatur undis**, latitantem ignemque non

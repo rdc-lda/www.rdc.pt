@@ -36,7 +36,7 @@ jobs:
           root: /tmp/workspace
           # Must be relative path from root
           paths:
-            - public/*
+            - /root/hugo/public/*
   
   # Publish the generated HTML to the RDC Website
   publish:

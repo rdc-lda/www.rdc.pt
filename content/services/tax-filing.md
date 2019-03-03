@@ -12,7 +12,7 @@ heroBackground: 'https://source.unsplash.com/kJklWKtND7w/1600x400'
 
 Lorem markdownum **Achaica revolutaque amore**, penitus puppes nec furit,
 clipeus fatetur, mira inter accedere. Dedit dum raptoresque Oete dolorem
-Cretaeas enim [ipse pectora excusat](#in-poscat) candentibus fertur? Furtiva
+Cretaeas enim ipse pectora excusat candentibus fertur? Furtiva
 Orontes Erysicthona dona, est per Achille viridi draconis cultis mota milia.
 
 - Nata perque
@@ -37,11 +37,11 @@ quodque. Non una genuisse ullis efficiet ad corpore nunc mentesque praestant?
 _Diduxit manibus_ anguis contraxit, suas et lacus nec soceri fores alis nec,
 nec! Data pater Perseu minanti animam operitur illa dolorem.
 
-Cursus suis _amplectitur inbutum retractat_ te tempora [deducere
-mille](#miles-deceat-adunca) cessastis alatur primoque. Tridentigero super, hoc
+Cursus suis _amplectitur inbutum retractat_ te tempora deducere
+mille cessastis alatur primoque. Tridentigero super, hoc
 parsque; et equos quaeque, forte nostro ceciderat, ubi faciat traherent
 tetigere: induitur. Nectare quae saepe **equos cognoscere curvata** aptius; odit
-inde aurea caecus. Nova et arbor [postquam uncis sumptumque](#nondum-illuc)
+inde aurea caecus. Nova et arbor postquam uncis sumptumqu
 inquit ingeniosus quodam **Phasidos**, continui sensisse nemoris ante calcitrat
 siccatque frondes.
 

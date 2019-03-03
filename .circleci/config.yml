@@ -28,15 +28,12 @@ jobs:
             htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html \
             --empty-alt-ignore --disable-external
 
-      # Create workspace directory
-      - run: mkdir -p /tmp/workspace
-
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: /tmp/workspace
+          root: public
           # Must be relative path from root
           paths:
-            - /root/hugo/public/*
+            - *
   
   # Publish the generated HTML to the RDC Website
   publish:
@@ -46,10 +43,10 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /tmp/workspace
+          at: public
 
       - run: |
-          if [[ -f /tmp/workspace/index.html ]]; then
+          if [[ -f public/index.html ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1

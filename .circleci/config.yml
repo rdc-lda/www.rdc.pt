@@ -53,11 +53,11 @@ jobs:
       - run: |
           echo "mkdir $FTP_FOLDER-$CIRCLE_WORKFLOW_ID" > create_dir.cmd && \
           ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < create_dir.cmd && \
-          ncftpput -R -v \
+          (cd public && ncftpput -R -v \
              -u $FTP_USERNAME \
              -p $FTP_PASSWORD \
              $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
-             public/
+             .)
 
 # && \
 #           echo "rename $FTP_FOLDER $FTP_FOLDER-$(date +"%Y-%m-%d_%H-%M-%S")" > rename_dirs.cmd && \

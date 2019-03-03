@@ -39,6 +39,7 @@ jobs:
   publish:
     docker:
       - image: circleci/ruby:2.4.1
+    working_directory: /root/hugo
     steps:
       - checkout
       - attach_workspace:

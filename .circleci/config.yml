@@ -51,8 +51,9 @@ jobs:
 
       # Publish into separate folder
       - run: |
-          echo $FTP_PASSWORD | ncftpput -R -v \
+           ncftpput -R -v \
              -u $FTP_USERNAME \
+             -p $FTP_PASSWORD \
              $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
              public/
 

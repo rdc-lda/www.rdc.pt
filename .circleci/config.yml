@@ -95,9 +95,9 @@ workflows:
       - validate:
           requires:
             - build
-      - publish:
-          requires:
-            - validate
-          filters:
-            branches:
-              only: master
+      # - publish:
+      #     requires:
+      #       - validate
+      #     filters:
+      #       branches:
+      #         only: master

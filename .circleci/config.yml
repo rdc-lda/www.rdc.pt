@@ -51,12 +51,17 @@ jobs:
 
       # Publish into separate folder
       - run: |
-           ncftpput -R -v \
+          echo "mkdir $FTP_FOLDER-$CIRCLE_WORKFLOW_ID" > create_dir.cmd && \
+          ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < create_dir.cmd && \
+          ncftpput -R -v \
              -u $FTP_USERNAME \
              -p $FTP_PASSWORD \
              $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
              public/
 
+# && \
+#           echo "rename $FTP_FOLDER $FTP_FOLDER-$(date +"%Y-%m-%d_%H-%M-%S")" > rename_dirs.cmd && \
+#           echo "rename $FTP_FOLDER-$CIRCLE_WORKFLOW_ID" >> rename_dirs.cmd && \
 # Glue the pipelines together
 workflows:
   version: 2

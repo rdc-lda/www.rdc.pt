@@ -68,23 +68,27 @@ jobs:
           command: apk update && apk add ncftp
 
       # Publish into separate folder
-      - run: 
+      - deploy: 
           name: Upload content to RDC FTP server
           command: |
-            echo "mkdir $FTP_FOLDER-$CIRCLE_WORKFLOW_ID" > create_dir.cmd && \
-            ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < create_dir.cmd && \
-            (cd public && ncftpput -R -v \
-              -u $FTP_USERNAME \
-              -p $FTP_PASSWORD \
-              $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
-              .)
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo "mkdir $FTP_FOLDER-$CIRCLE_WORKFLOW_ID" > create_dir.cmd && \
+              ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < create_dir.cmd && \
+              (cd public && ncftpput -R -v \
+                -u $FTP_USERNAME \
+                -p $FTP_PASSWORD \
+                $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
+                .)
+            fi
 
-      - run: 
+      - deploy: 
           name: Bring content live
           command: |
-            echo "rename $FTP_FOLDER $FTP_FOLDER-$(date +"%Y-%m-%d_%H-%M-%S")" > rename_dirs.cmd && \
-            echo "rename $FTP_FOLDER-$CIRCLE_WORKFLOW_ID $FTP_FOLDER" >> rename_dirs.cmd && \
-            ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < rename_dirs.cmd
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo "rename $FTP_FOLDER $FTP_FOLDER-$(date +"%Y-%m-%d_%H-%M-%S")" > rename_dirs.cmd && \
+              echo "rename $FTP_FOLDER-$CIRCLE_WORKFLOW_ID $FTP_FOLDER" >> rename_dirs.cmd && \
+              ncftp -u $FTP_USERNAME -p $FTP_PASSWORD $FTP_HOST < rename_dirs.cmd
+            fi
 
 # Glue the pipelines together
 workflows:

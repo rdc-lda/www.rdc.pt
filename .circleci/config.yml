@@ -30,10 +30,10 @@ jobs:
 
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: public
+          root: /root/hugo
           # Must be relative path from root
-          # paths:
-          #   - *
+          paths:
+             - public/
   
   # Publish the generated HTML to the RDC Website
   publish:
@@ -43,10 +43,10 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: public
+          at: /root/hugo
 
       - run: |
-          if [[ -f public/index.html ]]; then
+          if [[ -f /root/hugo/public/index.html ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1

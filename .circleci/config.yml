@@ -5,9 +5,9 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo:latest
-    working_directory: /root/hugo
+    working_directory: ~/hugo
     environment:
-      HUGO_BUILD_DIR: /root/hugo/public
+      HUGO_BUILD_DIR: ~/hugo/public
     steps:
       # Install git
       - run: apk update && apk add git
@@ -30,7 +30,7 @@ jobs:
 
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: /root/hugo
+          root: ~/hugo
           # Must be relative path from root
           paths:
              - public/
@@ -39,15 +39,15 @@ jobs:
   publish:
     docker:
       - image: circleci/ruby:2.4.1
-    working_directory: /root/hugo
+    working_directory: ~/hugo
     steps:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /root/hugo
+          at: ~/hugo/public
 
       - run: |
-          if [[ -f /root/hugo/public/index.html ]]; then
+          if [[ -f ~/hugo/public/index.html ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1

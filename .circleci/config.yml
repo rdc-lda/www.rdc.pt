@@ -30,7 +30,7 @@ jobs:
 
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
-          root: public
+          root: /root/hugo/public
           # Must be relative path from root
           paths:
             - echo-output      
@@ -43,7 +43,7 @@ jobs:
       - checkout
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: public
+          at: /root/hugo/public
 
       - run: |
           if [[ -f public/index.html ]]; then

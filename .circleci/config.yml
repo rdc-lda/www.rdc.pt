@@ -38,7 +38,7 @@ jobs:
   # Publish the generated HTML to the RDC Website
   publish:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: cibuilds/hugo:latest
     working_directory: ~/hugo
     steps:
       - checkout
@@ -46,12 +46,15 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: ~/hugo
 
+      # Install ncftp
+      - run: apk update && apk add ncftp
+
+      # Publish into separate folder
       - run: |
-          if [[ -f public/index.html ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+          echo $FTP_PASSWORD | ncftpput -R -v \
+             -u $FTP_USERNAME \
+             $FTP_HOST $FTP_FOLDER-$CIRCLE_WORKFLOW_ID \
+             public/
 
 # Glue the pipelines together
 workflows:
